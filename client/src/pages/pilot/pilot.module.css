@@ -1,0 +1,44 @@
+Button {
+  background-image: linear-gradient(
+    to right,
+    #24c6dc 0%,
+    #514a9d 51%,
+    #24c6dc 100%
+  );
+  width: 100px;
+  text-decoration: none;
+  color: inherit;
+  height: 30px;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+
+  border-radius: 10px;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+Button:hover {
+  box-shadow: 0 0 20px #eee;
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+.registerBtn {
+  width: 120px;
+}
+.logandregBtns {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.homeBtn {
+  margin-top: 30px;
+  margin-left: 24vw;
+}

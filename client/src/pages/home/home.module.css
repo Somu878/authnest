@@ -1,0 +1,23 @@
+.logoutBtn {
+  background-image: linear-gradient(
+    to right,
+    #24c6dc 0%,
+    #514a9d 51%,
+    #24c6dc 100%
+  );
+  margin-top: 50px;
+  margin-left: 38vw;
+  width: 100px;
+  height: 30px;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(255, 255, 255);
+
+  border-radius: 10px;
+  display: block;
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,10 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+body {
+  background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
+  color: black;
+}
