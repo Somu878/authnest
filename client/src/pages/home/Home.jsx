@@ -29,7 +29,7 @@ function Home() {
 
   return (
     <div>
-      <nav>toDolist</nav>
+      <h1>Hello! {userData.name}</h1>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia neque
         sit quas. Obcaecati accusamus numquam magni quam suscipit iste libero

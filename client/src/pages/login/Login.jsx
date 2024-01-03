@@ -15,18 +15,13 @@ function Login() {
   const loginhandler = async (e) => {
     e.preventDefault();
     axios.defaults.withCredentials = true;
-    axios
-      .post(
-        "https://simple-authentication-with-cookies-backend.vercel.app/login",
-        values
-      )
-      .then((res) => {
-        if (res.data.allow) {
-          navigate("/home");
-        } else {
-          setvalid(false);
-        }
-      });
+    axios.post("http://localhost:8000/login", values).then((res) => {
+      if (res.data.allow) {
+        navigate("/home");
+      } else {
+        setvalid(false);
+      }
+    });
   };
   return (
     <div>

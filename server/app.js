@@ -11,27 +11,22 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["https://simple-authentication-with-cookies-backend.vercel.app"],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST"],
     credentials: true,
   })
 );
-const port = 8000;
+const port = process.env.PORT;
 const duration = 1000 * 60 * 60 * 2;
-const {
-  SESS_NAME = "sid",
-  SESS_SECRET = "hohohooSecret",
-  SESS_LIFETIME = duration,
-} = process.env;
 app.use(cookieParser());
 app.use(
   session({
-    name: SESS_NAME,
+    name: process.env.SESS_NAME,
     resave: false,
     saveUninitialized: false,
-    secret: SESS_SECRET,
+    secret: process.env.SESS_SECRET,
     cookie: {
-      maxAge: SESS_LIFETIME,
+      maxAge: duration,
       secure: false,
       sameSite: true,
     },
@@ -47,6 +42,9 @@ app.use(async (req, res, next) => {
     }
   }
   next();
+});
+app.get("/", (req, res) => {
+  res.send("Server is up ");
 });
 app.get("/home", (req, res) => {
   const { user } = res.locals;
