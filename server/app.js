@@ -95,7 +95,7 @@ app.post("/logout", (req, res) => {
       console.log(err);
       res.send({ allow: false });
     }
-    res.clearCookie(SESS_NAME);
+    res.clearCookie(process.env.SESS_NAME);
     res.send({ allow: true });
   });
 });
