@@ -9,13 +9,13 @@ var cookieParser = require("cookie-parser");
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: [process.env.ORIGIN],
-    methods: ["GET", "POST"],
-    credentials: true,
-  })
-);
+const corsConfig = {
+  origin: "",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+};
+app.use(cors(corsConfig));
+app.options("", cors(corsConfig));
 const port = process.env.PORT;
 const duration = 1000 * 60 * 60 * 2;
 app.use(cookieParser());
