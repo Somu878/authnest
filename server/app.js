@@ -3,6 +3,7 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 var cors = require("cors");
+console.log(process.env.SESS_NAME);
 const User = require("./models/userModel");
 const db = require("./config/_db");
 var cookieParser = require("cookie-parser");
@@ -10,13 +11,12 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const corsConfig = {
-  origin: "",
+  origin: "http://localhost:8000",
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST"],
 };
 app.use(cors(corsConfig));
-app.options("", cors(corsConfig));
-const port = process.env.PORT;
+const port = process.env.PORT || 8000;
 const duration = 1000 * 60 * 60 * 2;
 app.use(cookieParser());
 app.use(

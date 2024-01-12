@@ -9,9 +9,7 @@ function Home() {
   const navigate = useNavigate();
   const fetchUserData = async () => {
     try {
-      const response = await axios.get(
-        "https://simple-authentication-with-cookies-backend.vercel.app/home"
-      );
+      const response = await axios.get("http://localhost:8000/home");
       setUserData(response.data[0]);
     } catch (error) {
       console.error("Error fetching user data:", error);
