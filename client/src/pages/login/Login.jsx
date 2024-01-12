@@ -15,7 +15,7 @@ function Login() {
   const loginhandler = async (e) => {
     e.preventDefault();
     axios.defaults.withCredentials = true;
-    axios.post("http://localhost:8000/login", values).then((res) => {
+    axios.post("https://authnest.onrender.com/login", values).then((res) => {
       if (res.data.allow) {
         navigate("/home");
       } else {

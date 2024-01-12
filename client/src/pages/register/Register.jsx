@@ -16,13 +16,15 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     axios.defaults.withCredentials = true;
-    axios.post("http://localhost:8000/register", formvalues).then((res) => {
-      if (res.data.allow) {
-        navigate("/home");
-      } else {
-        setuserExist(true);
-      }
-    });
+    axios
+      .post("https://authnest.onrender.com/register", formvalues)
+      .then((res) => {
+        if (res.data.allow) {
+          navigate("/home");
+        } else {
+          setuserExist(true);
+        }
+      });
   };
   return (
     <div className={styles.containerBox}>
