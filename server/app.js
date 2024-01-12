@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const corsConfig = {
-  origin: "http://localhost:8000",
+  origin: "https://authnest.onrender.com",
   credentials: true,
   methods: ["GET", "POST"],
 };
